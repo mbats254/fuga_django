@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'officers.apps.OfficersConfig',
+    'Farmers.apps.FarmersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -142,4 +143,4 @@ USE_TZ = True
 
 STATIC_URL = '/officers/templates/officers/assets/'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/officer/list'

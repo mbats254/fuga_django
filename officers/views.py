@@ -33,7 +33,7 @@ def register(request):
     return render(request,'registraton/register.html',context)
 
 def index(request):
-    return render(request,'officer/index.html')    
+    return render(request,'officers/index.html')    
 
 def deactivate_officer(request):     
          officer = Officer.objects.get(pk=officer_id)
@@ -66,7 +66,9 @@ class OfficersList(APIView):
     def get(self, request):
         officers = Officer.objects.all()
         serializer = OfficersSerializer(officers, many= True)
-        return Response(serializer.data)   
+        return Response(serializer.data)  
+
+
 
         
      
