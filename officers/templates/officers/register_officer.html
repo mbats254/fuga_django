@@ -1,0 +1,33 @@
+{% extends "officers/base.html" %} {% block title %} Register Officer {% endblock %} {% block body %}
+
+
+<!-- Main -->
+<div id="main">
+
+    <!-- Content -->
+    <section id="content" class="main">
+
+        <!-- Lists -->
+        <section>
+            <h2>Register New Officer</h2>
+            <div class="row">
+
+                <div class="col-6 col-12-medium">
+
+                    <form method="POST">
+                        {% csrf_token %} {{ form.as_p }}
+                        <!-- input.formcontrol -->
+                        <input type="submit" value="Register">
+                    </form>
+
+                </div>
+            </div>
+
+        </section>
+
+
+    </section>
+
+</div>
+
+{% endblock %}

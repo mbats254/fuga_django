@@ -1,0 +1,38 @@
+{% extends "officers/base.html" %} {% block title %} {{ officer.name }}'s Details {% endblock %} {% block body %}
+
+
+<!-- Main -->
+<div id="main">
+
+    <!-- Content -->
+    <section id="content" class="main">
+
+        <!-- Lists -->
+        <section>
+            <h2>Officer's Details</h2>
+            <div class="row">
+
+                <div class="col-6 col-12-medium">
+
+
+                    <p>{{ officer.name }}</p>
+                    <p>{{ officer.county }}</p>
+                    <p>{{ officer.phone_no }}</p>
+                    <p>{{ officer.id_no }}</p>
+                    <p>{{ officer.status }}</p>
+                    <a href="mailto:" {{ officer.email}}>{{ officer.email }}</a>
+
+                    <a href="{% url 'single_officer' officer.id %}">Deactivate Officer</a>
+
+
+                </div>
+            </div>
+
+        </section>
+
+
+    </section>
+
+</div>
+
+{% endblock %}

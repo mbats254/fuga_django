@@ -1,0 +1,15 @@
+{% extends "officers/base.html" %} {% block title %} Login {% endblock %} {% block body %}
+
+<hr>
+<h2>Login</h2>
+{% if form.errors %}
+<p>There's something wrong with what you entered</p>
+{% endif %} {% if next %}
+<p>Hey you can't acccess that page</p>
+{% endif %}
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %} {{ form.email }} {{ form.password }}
+    <input type="submit" value="Submit">
+    <input type="hidden" name="next" value="{{ next }}">
+</form>
+{% endblock %}
