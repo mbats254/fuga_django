@@ -56,11 +56,10 @@ class RegisterOfficers(TemplateView):
             officer_county = form.cleaned_data['county']
             officer_id_no  = form.cleaned_data['id_no']
             officer_phone_no = form.cleaned_data['phone_no']
-        args = {'form':form, 'user_name': user_name, 
-        #'email': user_email, 'county': officer_county, 'id_no': officer_id_no, 'phone_number' : officer_phone_number 
+        args = {'form':form, 'user_name': user_name,'email': user_email, 'county': officer_county, 'id_no': officer_id_no, 'phone_number' : officer_phone_number 
         }
-        return name
-        # return render(request, self.template, args)
+        # return name
+        return render(request, self.template, args)
 
 class OfficersList(APIView):
     def get(self, request):
